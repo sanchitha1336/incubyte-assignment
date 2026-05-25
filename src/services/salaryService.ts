@@ -1,5 +1,9 @@
 
 export function calculateSalary(salary: number) {
+  if (Number.isNaN(salary)) {
+    throw new Error("Invalid salary")
+  }
+
   if (salary < 0) {
     throw new Error("Invalid salary")
   }
@@ -9,4 +13,5 @@ export function calculateSalary(salary: number) {
   }
 
   return salary
+
 }

@@ -18,4 +18,9 @@ it("should deduct 10 percent tax for salary above 50000", () => {
 it("should support decimal salary values", () => {
   expect(salaryService.calculateSalary(45000.5)).toBe(45000.5)
 })
+it("should throw error for invalid salary input", () => {
+  expect(() =>
+    salaryService.calculateSalary(Number.NaN)
+  ).toThrow()
+})
 })
