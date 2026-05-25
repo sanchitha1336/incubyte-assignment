@@ -43,4 +43,16 @@ it("should generate salary slip correctly", () => {
     netSalary: 54000
   })
 })
+it("should calculate zero tax for salary below threshold", () => {
+
+  const employee = {
+    id: 2,
+    name: "John",
+    salary: 40000
+  }
+
+  const result = salaryService.generateSalarySlip(employee)
+
+  expect(result.tax).toBe(0)
+})
 })
