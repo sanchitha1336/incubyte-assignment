@@ -1,4 +1,4 @@
-import salaryService = require("../src/services/salaryService")
+import salaryService from "../src/services/salaryService"
 
 
 
@@ -25,5 +25,22 @@ it("should throw error for invalid salary input", () => {
 })
 it("should calculate tax correctly for large salary", () => {
   expect(salaryService.calculateSalary(100000)).toBe(90000)
+})
+it("should generate salary slip correctly", () => {
+
+  const employee = {
+    id: 1,
+    name: "Sanchitha",
+    salary: 60000
+  }
+
+  const result = salaryService.generateSalarySlip(employee)
+
+  expect(result).toEqual({
+    employeeName: "Sanchitha",
+    grossSalary: 60000,
+    tax: 6000,
+    netSalary: 54000
+  })
 })
 })
