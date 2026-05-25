@@ -23,4 +23,7 @@ it("should throw error for invalid salary input", () => {
     salaryService.calculateSalary(Number.NaN)
   ).toThrow()
 })
+it("should calculate tax correctly for large salary", () => {
+  expect(salaryService.calculateSalary(100000)).toBe(90000)
+})
 })
