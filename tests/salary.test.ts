@@ -15,4 +15,7 @@ describe("Salary Calculator", () => {
 it("should deduct 10 percent tax for salary above 50000", () => {
   expect(salaryService.calculateSalary(60000)).toBe(54000)
 })
+it("should support decimal salary values", () => {
+  expect(salaryService.calculateSalary(45000.5)).toBe(45000.5)
+})
 })
