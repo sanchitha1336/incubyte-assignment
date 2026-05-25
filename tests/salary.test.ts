@@ -12,4 +12,7 @@ describe("Salary Calculator", () => {
   it("should return zero when salary is zero", () => {
   expect(salaryService.calculateSalary(0)).toBe(0)
 })
+it("should deduct 10 percent tax for salary above 50000", () => {
+  expect(salaryService.calculateSalary(60000)).toBe(54000)
+})
 })
